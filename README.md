@@ -1,3 +1,10 @@
+# Maddi_Caldwell_DoggyTracks
+Repository of Project
+
+This is a library of my code.
+
+I want to express my love of dogs by creating a program using python that allows for people to search and adopt their perfect dog.
+
 ### Updating the shea256/angular-flask application
 This fork was created because the original code for the angular-flask application, https://github.com/shea256/angular-flask, is not compatible with the more recent versions of angular and the new JSON API media type, as of June, 2017.
 
@@ -45,3 +52,4 @@ A template for building apps with an Angular frontend and a Flask / python backe
 
 5. check out your blog
 > http://localhost:5000/blog
+
