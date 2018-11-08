@@ -24,10 +24,17 @@ angular.module('AngularFlask', ['ngRoute', 'angularFlaskServices'])
 			templateUrl: '/static/partials/post-detail.html',
 			controller: PostDetailController
 		})
-		/* Create a "/blog" route that takes the user to the same place as "/post" */
-		.when('/blog', {
-			templateUrl: 'static/partials/post-list.html',
-			controller: PostListController
+		.when('/dog/add', {
+			templateUrl: 'static/partials/dog-add.html',
+			controller: InsertDogController
+		})
+		.when('/dog/:dogId', {
+			templateUrl: '/static/partials/dog-detail.html',
+			controller: DogDetailController
+		})
+		.when('/dogs', {
+			templateUrl: 'static/partials/dog-list.html',
+			controller: DogListController
 		})
 		.otherwise({
 			redirectTo: '/'

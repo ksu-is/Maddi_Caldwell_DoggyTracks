@@ -20,23 +20,21 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post %r>' % self.title
 
-class Puppy(db.Model):
+class Dog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     breed = db.Column(db.String(80))
-    birthday = db.Column(db.DateTime)
 
-    def __init__(self, name, breed, birthday=None):
+    def __init__(self, name, breed):
         self.name = name
         self.breed = breed
-        self.birthday = birthday
 
     def __repr__(self):
-        return '<Puppy %r>' % self.name
+        return '<Dog %r>' % self.name
 
 # models for which we want to create API endpoints
-app.config['API_MODELS'] = {'post': Post, 'puppy': Puppy}
+app.config['API_MODELS'] = {'post': Post, 'dog': Dog}
 
 # models for which we want to create CRUD-style URL endpoints,
 # and pass the routing onto our AngularJS application
-app.config['CRUD_URL_MODELS'] = {'post': Post, 'puppy': Puppy}
+app.config['CRUD_URL_MODELS'] = {'post': Post, 'dog': Dog}
