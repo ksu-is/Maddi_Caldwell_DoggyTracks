@@ -36,6 +36,10 @@ angular.module('AngularFlask', ['ngRoute', 'angularFlaskServices'])
 			templateUrl: 'static/partials/dog-list.html',
 			controller: DogListController
 		})
+		.when('/doglist', {
+			templateUrl: 'static/partials/dog-list.html',
+			controller: DogListController
+		})
 		.otherwise({
 			redirectTo: '/'
 		})

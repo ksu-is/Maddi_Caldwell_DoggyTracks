@@ -16,7 +16,7 @@ function InsertDogController($scope, $window, Dog) {
     dogQuery.$promise.then(function (result) { 
       console.log(result)
     });
-    $window.location.href = '/dogs';
+    $window.location.href = '/doglist';
   }
 }
 
