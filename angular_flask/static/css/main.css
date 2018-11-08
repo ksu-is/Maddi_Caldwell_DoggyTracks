@@ -32,9 +32,15 @@
 	height: 250px;
 }
 
+.page {
+	min-height: 100%;
+}
+
 .main {
+	overflow: auto;
+	padding-bottom:150px;
 	padding-top: 20px;
-	min-height: 370px;
+	min-height: 100%;
 }
 
 .footer-left {

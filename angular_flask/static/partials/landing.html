@@ -2,13 +2,22 @@
 <div class="header-section">
 	<div class="row header-row">
 		<div class="span12 masthead">
-			<h1 class="heading">Welcome to Doggie Tracks.</h1>
+			<h1 class="heading">Welcome to Doggie Tracks</h1>
 		</div>
 	</div>
 </div>
 <div class="header-push">
 </div>
 
-<div>
-	<h3><a href="/dogs">Browse Dogs</a></h3>
+<div class="container">
+	<div class="row" ng-repeat="dog in dogs | orderBy: 'id':true " ng-if="$index % 2 == 0">
+		<div class="span6 text-center">
+			<h1><a href="/dog/{{ dogs[$index].id }}">{{ dogs[$index].name }}</a></h1>
+			<h4><a href="/dog/{{ dogs[$index].id }}">{{ dogs[$index].name }}</a><br />{{ dogs[$index].breed }}</h4>
+		</div>
+		<div class="span6 text-center">
+			<h1><a href="/dog/{{ dogs[$index + 1].id }}">{{ dogs[$index + 1].name }}</a></h1>
+			<h4><a href="/dog/{{ dogs[$index + 1].id }}">{{ dogs[$index + 1].name }}</a><br />{{ dogs[$index + 1].breed }}</h4>
+		</div>
+	</div>
 </div>

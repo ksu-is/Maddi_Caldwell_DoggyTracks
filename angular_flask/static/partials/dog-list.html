@@ -1,5 +1,15 @@
 
 <a href="/dog/add">Add a Dog</a>
-<div ng-repeat="dog in dogs | orderBy: 'id':true ">
-	<h4><a href="/dog/{{ dog.id }}">{{ dog.name }}</a> - {{ dog.breed }}</h4>
+<div class="container">
+	<div class="row" ng-repeat="dog in dogs | orderBy: 'id':true " ng-if="$index % 2 == 0">
+		<div class="span6 text-center">
+			<h1><a href="/dog/{{ dogs[$index].id }}">{{ dogs[$index].name }}</a></h1>
+			<h4><a href="/dog/{{ dogs[$index].id }}">{{ dogs[$index].name }}</a><br />{{ dogs[$index].breed }}</h4>
+		</div>
+		<div class="span6 text-center">
+			<h1><a href="/dog/{{ dogs[$index + 1].id }}">{{ dogs[$index + 1].name }}</a></h1>
+			<h4><a href="/dog/{{ dogs[$index + 1].id }}">{{ dogs[$index + 1].name }}</a><br />{{ dogs[$index + 1].breed }}</h4>
+		</div>
+	</div>
 </div>
+	

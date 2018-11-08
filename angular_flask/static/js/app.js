@@ -6,23 +6,11 @@ angular.module('AngularFlask', ['ngRoute', 'angularFlaskServices'])
 		$routeProvider
 		.when('/', {
 			templateUrl: 'static/partials/landing.html',
-			controller: IndexController
+			controller: DogListController
 		})
 		.when('/about', {
 			templateUrl: 'static/partials/about.html',
 			controller: AboutController
-		})
-		.when('/post', {
-			templateUrl: 'static/partials/post-list.html',
-			controller: PostListController
-		})
-		.when('/new', {
-			templateUrl: 'static/partials/post-add.html',
-			controller: InsertPostController
-		})
-		.when('/post/:postId', {
-			templateUrl: '/static/partials/post-detail.html',
-			controller: PostDetailController
 		})
 		.when('/dog/add', {
 			templateUrl: 'static/partials/dog-add.html',

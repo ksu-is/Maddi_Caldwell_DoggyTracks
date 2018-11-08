@@ -20,16 +20,6 @@ function InsertDogController($scope, $window, Dog) {
   }
 }
 
-function InsertPostController($scope, $window, Post) {
-  $scope.submitForm = function() {
-    var postQuery = Post.post(JSON.stringify({data: {type: "post", attributes: $scope.blog }}));
-    postQuery.$promise.then(function (result) { 
-      console.log(result);
-    });
-    $window.location.href = '/blog';
-  }
-}
-
 function DogListController($scope, Dog) {
   var self = this;
   self.dogs = [];
@@ -48,27 +38,5 @@ function DogDetailController($scope, $routeParams, Dog) {
   var data = result['data'];
   var dog = {id: data['id'], name: data['attributes']['name'], breed: data['attributes']['breed']};
   $scope.dog = dog;
-  });	
-}
-
-function PostListController($scope, Post) {
-  var self = this;
-  self.posts = [];
-  var postsQuery = Post.get({postId: ''});
-  postsQuery.$promise.then(function (result) {
-  angular.forEach(result['data'], function(post, akey) {
-    this.push({id: post['id'], title: post['attributes']['title']});
-  }, self.posts);
-  $scope.posts = self.posts;
-  });
-}
-
-
-function PostDetailController($scope, $routeParams, Post) {
-  var postsQuery = Post.get({ postId: $routeParams.postId });
-  postsQuery.$promise.then(function (result) {
-  var data = result['data'];
-  var post = {id: data['id'], title: data['attributes']['title'], body : data['attributes']['body']};
-  $scope.post = post;
   });	
 }
