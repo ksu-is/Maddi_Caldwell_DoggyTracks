@@ -26,7 +26,7 @@ function DogListController($scope, Dog) {
   var dogsQuery = Dog.get({dogId: ''});
   dogsQuery.$promise.then(function (result) {
   angular.forEach(result['data'], function(dog, akey) {
-    this.push({id: dog['id'], name: dog['attributes']['name'], breed: dog['attributes']['breed']});
+    this.push({id: dog['id'], name: dog['attributes']['name'], breed: dog['attributes']['breed'], desc: dog['attributes']['desc']});
   }, self.dogs);
   $scope.dogs = self.dogs;
   });
@@ -36,7 +36,7 @@ function DogDetailController($scope, $routeParams, Dog) {
   var dogQuery = Dog.get({ dogId: $routeParams.dogId });
   dogQuery.$promise.then(function (result) {
   var data = result['data'];
-  var dog = {id: data['id'], name: data['attributes']['name'], breed: data['attributes']['breed']};
+  var dog = {id: data['id'], name: data['attributes']['name'], breed: data['attributes']['breed'], desc: data['attributes']['desc']};
   $scope.dog = dog;
   });	
 }
